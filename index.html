@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#16102B">
+  <meta name="robots" content="noindex, nofollow">
+  <title>A little surprise for Hend</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. Lock screen -->
+  <section class="screen active" id="lock">
+    <div class="lock-top">
+      <p class="date" id="date"></p>
+      <p class="clock" id="clock">00:00</p>
+    </div>
+
+    <div class="notice">
+      <div class="app-icon" aria-hidden="true">
+        <svg viewBox="8 8 184 172"><path d="M100 172 C 18 112, -2 62, 34 30 C 60 8, 92 20, 100 50 C 108 20, 140 8, 166 30 C 202 62, 182 112, 100 172 Z"/></svg>
+      </div>
+      <div>
+        <p class="notice-title">For <span data-name>Hend</span></p>
+        <p class="notice-body">It Is For Your Birthday I Made It With LOVE For You.</p>
+      </div>
+    </div>
+
+    <div class="runner" id="runner">
+      <button class="btn" id="unlock" type="button"><span class="label">Tap to unlock</span></button>
+    </div>
+  </section>
+
+  <!-- 2. Heart + Happy Birthday -->
+  <section class="screen" id="birthday" inert>
+    <div class="stage">
+      <div class="heart-wrap">
+        <div class="pulse">
+          <div class="glow"></div>
+          <svg class="heart" viewBox="8 8 184 172" aria-hidden="true">
+            <path pathLength="1" d="M100 172 C 18 112, -2 62, 34 30 C 60 8, 92 20, 100 50 C 108 20, 140 8, 166 30 C 202 62, 182 112, 100 172 Z"/>
+          </svg>
+        </div>
+        <div class="burst" id="burst" aria-hidden="true"></div>
+      </div>
+
+      <h2 class="title" id="title" aria-label="Happy Birthday, Hend">
+        <span class="line1" id="line1" aria-hidden="true"></span>
+        <span class="line2" id="line2" aria-hidden="true"></span>
+      </h2>
+    </div>
+    <button class="btn next" id="toHearts" type="button">There's more</button>
+  </section>
+
+  <!-- 3. Heart made of "I love you" -->
+  <section class="screen" id="hearts" inert>
+    <p class="caption">In every language I could find</p>
+    <div class="hearts-stage">
+      <canvas id="loveCanvas" role="img" aria-label="A heart made of the words I love you in many languages"></canvas>
+    </div>
+    <button class="btn next" id="toLetter" type="button">Hold On</button>
+  </section>
+
+  <!-- 4. The letter -->
+  <section class="screen" id="letter" inert>
+    <div class="letter-scroll" id="letterScroll">
+      <p class="letter-text" id="letterText"></p>
+    </div>
+    <button class="again next" id="replay" type="button">Start over</button>
+  </section>
+
+  <!-- Music toggle (only appears if a song is found) -->
+  <button class="music" id="music" type="button" hidden aria-label="Pause music" aria-pressed="true">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path class="spk" d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z"/>
+      <path class="wave" d="M15.5 9.2a4 4 0 0 1 0 5.6M18 6.6a7.6 7.6 0 0 1 0 10.8"/>
+      <path class="mute" d="M16 9.5l5 5M21 9.5l-5 5"/>
+    </svg>
+  </button>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
